@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:        #f4f9f4;
+  --surface:   #eaf3ea;
+  --border:    #c8dfc8;
+  --accent:    #2e7d4f;
+  --accent2:   #4caf78;
+  --text:      #1e2e22;
+  --muted:     #5a7a62;
+  --tag-bg:    #d4edda;
+  --tag-text:  #1d5c38;
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  font-size: 18px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ── Prose styles for blog post body ── */
+.prose {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.78;
+}
+.prose p { margin-bottom: 1.5rem; }
+.prose h2 {
+  font-family: 'Lora', serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin: 2.8rem 0 1rem;
+  color: var(--text);
+}
+.prose h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 2rem 0 0.7rem;
+  color: var(--accent);
+}
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose a:hover { color: var(--accent2); }
+.prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose blockquote {
+  border-left: 3px solid var(--accent2);
+  margin: 2rem 0;
+  padding: 0.8rem 1.2rem;
+  background: var(--surface);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: var(--muted);
+}
+.prose strong { font-weight: 600; color: var(--text); }
+.prose em { font-style: italic; }
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+.prose code {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.9em;
+}
+.prose pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+.prose pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.9rem;
+}

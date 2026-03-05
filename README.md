@@ -1,96 +1,183 @@
-# TheWhaleDragonKodex
-**TheWhaleDragonKodex**
+# My Blog — Next.js + GitHub Pages
 
-A clean, minimal static blog. No build tools. No JavaScript framework. Just HTML files.
-
----
-
-## 📁 File structure
-
-```
-blog/
-├── index.html              ← homepage (list of all posts)
-├── about.html              ← about page
-└── posts/
-    ├── post-template.html  ← COPY THIS to write a new post
-    ├── example-post-1.html
-    └── example-post-2.html
-```
+A clean, fast static blog built with Next.js 14.
+No CMS, no database — posts are plain Markdown files.
 
 ---
 
-## ✏️ How to write a new post
+## 📁 Project structure
 
-### Step 1 — Duplicate the template
-Copy `posts/post-template.html` and rename it:
 ```
-posts/my-new-post-title.html
+blog-next/
+├── app/
+│   ├── layout.tsx          ← root layout (site title / metadata)
+│   ├── page.tsx            ← homepage (post list)
+│   ├── about/page.tsx      ← about page
+│   └── blog/[slug]/
+│       └── page.tsx        ← individual post page
+├── components/
+│   ├── Header.tsx          ← site header + nav
+│   └── Footer.tsx          ← site footer
+├── content/
+│   └── posts/
+│       ├── _template.md    ← COPY THIS for every new post
+│       ├── example-post-1.md
+│       └── example-post-2.md
+├── lib/
+│   └── posts.ts            ← reads and parses markdown files
+├── .github/
+│   └── workflows/
+│       └── deploy.yml      ← auto-deploy to GitHub Pages on push
+├── next.config.js          ← static export config
+└── package.json
 ```
-Use lowercase letters and hyphens (no spaces).
-
-### Step 2 — Edit the post file
-Open your new file and look for the ✏️ comments. Change:
-- `<title>` tag at the top
-- Date and tag in `.post-meta`
-- `<h1 class="post-title">` — your post title
-- `<p class="post-subtitle">` — a one-line description (or delete it)
-- Everything inside `<div class="post-body">` — your actual writing
-
-### Step 3 — Add it to the homepage
-Open `index.html` and find the `<ul class="post-list">`.
-
-Copy one of the existing `<li class="post-item">` blocks, paste it at the **top** of the list, and update:
-- The date
-- The tag label
-- The title text
-- The excerpt
-- Both `href` links → `posts/my-new-post-title.html`
-
-That's it. No build step needed.
 
 ---
 
-## 🚀 Publishing to GitHub Pages
+## 🚀 First-time setup (on your machine)
 
-1. [Create a new GitHub repository](https://github.com/new)
-   - Name it `yourusername.github.io` for a personal site, or any name for a project site
+### Prerequisites
+- [Node.js 18+](https://nodejs.org) installed
+- A [GitHub](https://github.com) account
 
-2. Upload all the blog files (drag & drop works fine in the GitHub web interface)
+### 1 — Install dependencies
+```bash
+npm install
+```
 
-3. Go to your repo **Settings → Pages**
+### 2 — Run locally
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000).
 
-4. Under **Source**, select `main` branch and `/ (root)` folder → click **Save**
+### 3 — Personalise
+Search the project for `✏️` comments — those are the spots to change:
 
-5. Your site will be live at:
-   - `https://yourusername.github.io` (personal repo)
-   - `https://yourusername.github.io/repo-name` (project repo)
-
-> **Note for project repos:** If your site is at `/repo-name/`, update the links in `header` and `footer` to include the subfolder, e.g. `href="/repo-name/index.html"`.
+| File | What to change |
+|------|---------------|
+| `app/layout.tsx` | Site title and description |
+| `components/Header.tsx` | Your name, tagline |
+| `components/Footer.tsx` | Your name, year |
+| `app/about/page.tsx` | Your bio text |
+| `app/blog/[slug]/page.tsx` | Your email address |
 
 ---
 
-## 🎨 Customising the look
+## ✏️ How to write a new blog post
 
-All styles use CSS variables defined at the top of each file:
+### Step 1 — Create a Markdown file
+Copy `content/posts/_template.md` and rename it:
+```
+content/posts/my-post-title.md
+```
+Use lowercase and hyphens — this becomes the URL: `/blog/my-post-title`
+
+### Step 2 — Edit the frontmatter at the top
+```markdown
+---
+title: "Your Post Title"
+date: "2025-07-15"          ← YYYY-MM-DD format
+tag: "Learning"             ← one tag shown as a label
+excerpt: "A 1–2 sentence summary shown on the homepage."
+subtitle: "Optional subtitle under the title."  ← delete if not needed
+---
+
+Your content starts here...
+```
+
+### Step 3 — Write your post in Markdown
+
+```markdown
+Normal paragraph text.
+
+## Section heading
+
+> A blockquote looks like this.
+
+- Bullet one
+- Bullet two
+
+**Bold text** and *italic text* and [a link](https://example.com).
+```
+
+### Step 4 — Push to GitHub
+```bash
+git add .
+git commit -m "Add post: my-post-title"
+git push
+```
+GitHub Actions will automatically build and deploy your site in ~2 minutes.
+
+---
+
+## 🌐 Setting up GitHub Pages (first time)
+
+### 1 — Create a new GitHub repository
+Go to [github.com/new](https://github.com/new) and create a repo.
+Name it anything (e.g. `my-blog`).
+
+### 2 — Push your code
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
+git push -u origin main
+```
+
+### 3 — Enable GitHub Pages with GitHub Actions
+1. Go to your repo → **Settings** → **Pages**
+2. Under **Source**, select **"GitHub Actions"** (not "Deploy from a branch")
+3. Click **Save**
+
+That's it. The workflow in `.github/workflows/deploy.yml` handles everything.
+
+### 4 — Your site URL
+- Personal repo (`yourusername.github.io`): `https://yourusername.github.io`
+- Project repo (any other name): `https://yourusername.github.io/repo-name`
+
+> **If using a project repo**, add one line to `next.config.js`:
+> ```js
+> basePath: '/your-repo-name',
+> ```
+> This makes internal links work correctly under a subfolder.
+
+---
+
+## 🔄 Everyday workflow
+
+```
+Write post → git add . → git commit -m "..." → git push
+```
+GitHub Actions deploys automatically. Check the **Actions** tab in your repo to watch the build.
+
+---
+
+## 🎨 Changing colours or fonts
+
+All CSS variables are in `app/globals.css`:
 
 ```css
 :root {
   --bg:      #f4f9f4;   /* page background */
-  --accent:  #2e7d4f;   /* green accent colour */
+  --accent:  #2e7d4f;   /* main green colour */
   --text:    #1e2e22;   /* body text */
-  --muted:   #5a7a62;   /* dates, meta, footer */
+  --muted:   #5a7a62;   /* dates, captions, footer */
 }
 ```
 
-Change these values to retheme the entire site instantly.
+Change these values to instantly retheme the whole site.
 
-To change the site name or tagline, edit the `<header>` block in each HTML file.
-(Find & Replace in your text editor makes this fast.)
+Fonts are imported from Google Fonts in `app/globals.css` — swap the import URL to use different fonts.
 
 ---
 
-## 💡 Tips
+## 🛠 Useful commands
 
-- **Keep filenames short and descriptive**: `posts/writing-habit.html` not `posts/post-june-12-2025-v2-final.html`
-- **Tags**: Pick 3–5 consistent tags (Learning, Productivity, etc.) and reuse them so posts feel organised
-- **Draft posts**: Just don't add them to `index.html` yet — the file can exist in `posts/` without being linked
+| Command | What it does |
+|---------|-------------|
+| `npm run dev` | Start local dev server at localhost:3000 |
+| `npm run build` | Build static site into `/out` folder |
+| `npm run lint` | Check for code issues |
