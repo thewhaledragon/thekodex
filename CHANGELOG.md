@@ -8,6 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+- Added GitHub Pages `basePath` configuration in `next.config.js` to correctly resolve CSS, fonts, and link routes on production deployments.
+
 ### Changed
 - Restructured flat project root into the Next.js App Router directory layout defined in `README.md`:
   - `layout.tsx`, `globals.css`, `page.tsx` → `app/`
