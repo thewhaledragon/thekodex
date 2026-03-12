@@ -4,10 +4,10 @@ import './globals.css'
 // ✏️ Change this to your site name and description
 export const metadata: Metadata = {
   title: {
-    default: 'Your Name',
-    template: '%s · Your Name',
+    default: 'TheWhaleDragonKodex',
+    template: '%s · TheWhaleDragonKodex',
   },
-  description: 'Writing about things that matter to me.',
+  description: 'Writing about AI x Music.',
 }
 
 export default function RootLayout({

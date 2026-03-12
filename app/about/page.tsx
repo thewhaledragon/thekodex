@@ -26,9 +26,8 @@ export default function AboutPage() {
         </h1>
 
         {[
-          `Hi, I'm Your Name. I write about [your topics here — e.g. learning, productivity, creativity, technology].`,
-          `A bit about me: [a sentence or two about who you are, what you do, where you're based. Keep it human and direct.]`,
-          `I started this blog because [your reason — e.g. "I wanted a place to think in public"].`,
+          `Hi, I'm TheWhaleDragon.`,
+          `I write about AI x Music`
         ].map((text, i) => (
           <p key={i} style={{
             marginBottom: '1.4rem',
@@ -40,7 +39,7 @@ export default function AboutPage() {
         ))}
 
         <p style={{ marginBottom: '1.4rem', fontSize: '1.05rem', lineHeight: 1.78 }}>
-          If something resonates, I&apos;d love to hear from you:{' '}
+          If you love AI x Music, contact me:{' '}
           {/* ✏️ Change your email */}
           <a href="mailto:you@example.com" style={{ color: 'var(--accent)' }}>
             you@example.com

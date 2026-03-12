@@ -9,12 +9,12 @@ export default function Footer() {
     }}>
       {/* ✏️ Change "Your Name" and year */}
       <p>
-        © {new Date().getFullYear()} Your Name ·{' '}
+        © {new Date().getFullYear()} TheWhaleDragonKodex ·{' '}
         <a
-          href="https://pages.github.com"
+          href="https://github.com/thewhaledragon"
           style={{ color: 'var(--accent)', textDecoration: 'none' }}
         >
-          Hosted on GitHub Pages
+          TheWhaleDragon
         </a>
       </p>
     </footer>

@@ -16,7 +16,7 @@ export default function Header() {
         letterSpacing: '-0.5px',
         textDecoration: 'none',
       }}>
-        Your Name
+        TheWhaleDragonKodex
       </Link>
 
       <p style={{
@@ -25,7 +25,7 @@ export default function Header() {
         color: 'var(--muted)',
         fontStyle: 'italic',
       }}>
-        Writing about things that matter to me
+        Writing about AI x Music.
       </p>
 
       <nav style={{
