@@ -10,10 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- "Core Competencies" section to the About Me page.
-- "Featured Research & Builds" section to the About Me page with project tags.
+- Humble, factual introduction with bullet points to the "About Me" page.
 
 ### Changed
+- Renamed About page main title to "About Me".
+- Removed "Core Competencies" and "Featured Research & Builds" sections for a cleaner, more focused layout.
+- Fixed tag spacing in the chronological timeline to ensure clear separation.
 - Redesigned the About Me page with a more premium aesthetic, including glassmorphism cards and a vertical timeline.
 - Migrated global font to **Lexend** using `next/font/google` for better performance and consistency.
 - Synchronized About page content with latest research updates from `about.md`.

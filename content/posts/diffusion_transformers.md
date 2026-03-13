@@ -2,7 +2,7 @@
 title: "Diffusion Transformers (DiT)"
 date: "2026-03-12"
 tag: "Deep Learning"
-excerpt: "Diffusion Transformers** (DiT family) have decisively become the dominant backbone for high-quality generative image & video synthesis, replacing U-Net-based diffusion in almost every frontier and open-source model."
+excerpt: "**Diffusion Transformers** (DiT family) have decisively become the dominant backbone for high-quality generative image & video synthesis, replacing U-Net-based diffusion in almost every frontier and open-source model."
 subtitle: "From U-Net to global attention: how Diffusion Transformers took over image & video generation"
 ---
 
