@@ -1,97 +1,197 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg:        #f4f9f4;
-  --surface:   #eaf3ea;
-  --border:    #c8dfc8;
-  --accent:    #2e7d4f;
-  --accent2:   #4caf78;
-  --text:      #1e2e22;
-  --muted:     #5a7a62;
-  --tag-bg:    #d4edda;
-  --tag-text:  #1d5c38;
+  --bg: #f2f8f4;
+  --surface: #e6f2ea;
+  --surface2: #d8eade;
+  --border: #b8d8c0;
+  --accent: #1a6b3c;
+  --accent2: #2fa865;
+  --accent-glow: rgba(47, 168, 101, 0.18);
+  --text: #0f1f15;
+  --muted: #4a7060;
+  --tag-bg: #c4ebd2;
+  --tag-text: #1a5c35;
 }
 
 html {
   background-color: var(--bg);
   color: var(--text);
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'Lexend', sans-serif;
   font-weight: 300;
-  line-height: 1.7;
-  font-size: 18px;
+  line-height: 1.72;
+  font-size: 17px;
   background: var(--bg);
   color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Global selection highlight ── */
+::selection {
+  background: var(--accent2);
+  color: #fff;
+}
+
+/* ── Smooth links ── */
+a {
+  transition: color 0.18s ease;
 }
 
 /* ── Prose styles for blog post body ── */
 .prose {
   color: var(--text);
   font-size: 1.05rem;
-  line-height: 1.78;
+  line-height: 1.82;
 }
-.prose p { margin-bottom: 1.5rem; }
+
+.prose p {
+  margin-bottom: 1.5rem;
+}
+
 .prose h2 {
-  font-family: 'Lora', serif;
+  font-family: 'Lexend', sans-serif;
   font-size: 1.45rem;
   font-weight: 600;
   margin: 2.8rem 0 1rem;
   color: var(--text);
+  letter-spacing: -0.01em;
 }
+
 .prose h3 {
-  font-family: 'Lora', serif;
+  font-family: 'Lexend', sans-serif;
   font-size: 1.15rem;
   font-weight: 600;
   margin: 2rem 0 0.7rem;
   color: var(--accent);
 }
+
 .prose a {
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.prose a:hover { color: var(--accent2); }
-.prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-.prose li { margin-bottom: 0.4rem; }
+
+.prose a:hover {
+  color: var(--accent2);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.4rem;
+}
+
 .prose blockquote {
   border-left: 3px solid var(--accent2);
   margin: 2rem 0;
   padding: 0.8rem 1.2rem;
   background: var(--surface);
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 8px 8px 0;
   font-style: italic;
   color: var(--muted);
 }
-.prose strong { font-weight: 600; color: var(--text); }
-.prose em { font-style: italic; }
+
+.prose strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.prose em {
+  font-style: italic;
+}
+
 .prose hr {
   border: none;
   border-top: 1px solid var(--border);
   margin: 2.5rem 0;
 }
+
 .prose code {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 0.1rem 0.35rem;
   font-size: 0.9em;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
 }
+
 .prose pre {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 1.2rem 1.5rem;
   overflow-x: auto;
   margin-bottom: 1.5rem;
 }
+
 .prose pre code {
   background: none;
   border: none;
   padding: 0;
   font-size: 0.9rem;
+}
+
+/* ── Accent gradient utility ── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Blog post list links ── */
+.post-title-link {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.18s;
+}
+
+.post-title-link:hover {
+  color: var(--accent);
+}
+
+.read-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.85rem;
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: color 0.18s;
+}
+
+.read-more-link:hover {
+  color: var(--accent2);
+}
+
+/* ── Nav links (Header) ── */
+.nav-link {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  transition: background 0.18s, color 0.18s;
+}
+
+.nav-link:hover {
+  background: var(--surface);
+  color: var(--accent);
 }

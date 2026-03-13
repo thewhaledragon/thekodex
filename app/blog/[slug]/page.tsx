@@ -29,77 +29,86 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       <Header />
 
-      <article style={{
-        maxWidth: '680px',
-        margin: '0 auto',
-        padding: '3.5rem 1.5rem 6rem',
-      }}>
+      <article style={{ maxWidth: '700px', margin: '0 auto', padding: '3.5rem 1.5rem 6rem' }}>
+
+        {/* ── Back link ── */}
+        <Link href="/" style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.3rem',
+          fontSize: '0.8rem',
+          fontWeight: 500,
+          color: 'var(--muted)',
+          textDecoration: 'none',
+          letterSpacing: '0.04em',
+          textTransform: 'uppercase',
+          marginBottom: '2.5rem',
+          padding: '0.4rem 0.8rem',
+          borderRadius: '6px',
+          border: '1px solid var(--border)',
+          background: 'var(--surface)',
+          transition: 'border-color 0.18s, color 0.18s',
+        }}>
+          ← All posts
+        </Link>
 
         {/* ── Post header ── */}
-        <div style={{ marginBottom: '2.8rem' }}>
-          <Link href="/" style={{
-            display: 'inline-block',
-            fontSize: '0.85rem',
-            color: 'var(--muted)',
-            textDecoration: 'none',
-            marginBottom: '1.5rem',
-          }}>
-            ← All posts
-          </Link>
-
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.8rem',
-            marginBottom: '0.9rem',
-            flexWrap: 'wrap',
-          }}>
-            <span style={{ fontSize: '0.85rem', color: 'var(--muted)' }}>
+        <header style={{ marginBottom: '2.8rem' }}>
+          {/* Meta row */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '0.82rem', color: 'var(--muted)', fontWeight: 400 }}>
               {formatDate(post.date)}
             </span>
             {post.tag && (
               <span style={{
-                fontSize: '0.75rem',
+                fontSize: '0.7rem',
                 background: 'var(--tag-bg)',
                 color: 'var(--tag-text)',
-                padding: '0.15rem 0.6rem',
-                borderRadius: '20px',
+                padding: '0.2rem 0.65rem',
+                borderRadius: '99px',
                 fontWeight: 600,
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
               }}>
                 {post.tag}
               </span>
             )}
           </div>
 
+          {/* Title */}
           <h1 style={{
-            fontFamily: "'Lora', serif",
-            fontSize: '2.1rem',
-            fontWeight: 600,
-            lineHeight: 1.25,
-            letterSpacing: '-0.3px',
+            fontFamily: "'Lexend', sans-serif",
+            fontSize: 'clamp(1.75rem, 4vw, 2.4rem)',
+            fontWeight: 700,
+            lineHeight: 1.18,
+            letterSpacing: '-0.02em',
             color: 'var(--text)',
+            marginBottom: '0.6rem',
           }}>
             {post.title}
           </h1>
 
+          {/* Gradient accent bar */}
+          <div style={{
+            height: '3px',
+            width: '3.5rem',
+            borderRadius: '99px',
+            background: 'linear-gradient(90deg, var(--accent), var(--accent2))',
+            marginTop: '1.2rem',
+          }} />
+
           {post.subtitle && (
             <p style={{
-              marginTop: '0.75rem',
+              marginTop: '1rem',
               fontSize: '1.1rem',
               color: 'var(--muted)',
               fontStyle: 'italic',
+              lineHeight: 1.6,
             }}>
               {post.subtitle}
             </p>
           )}
-        </div>
-
-        {/* ── Divider ── */}
-        <hr style={{
-          border: 'none',
-          borderTop: '1px solid var(--border)',
-          margin: '2.5rem 0',
-        }} />
+        </header>
 
         {/* ── Post body ── */}
         <div
@@ -109,19 +118,31 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* ── Footer note ── */}
         <div style={{
-          marginTop: '3.5rem',
+          marginTop: '4rem',
           paddingTop: '2rem',
           borderTop: '1px solid var(--border)',
-          fontSize: '0.9rem',
+          fontSize: '0.88rem',
           color: 'var(--muted)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '1rem',
         }}>
-          {/* ✏️ Change your email address here */}
-          <p>
+          <p style={{ margin: 0 }}>
             Got thoughts? Reply by email:{' '}
-            <a href="mailto:you@example.com" style={{ color: 'var(--accent)' }}>
+            <a href="mailto:you@example.com" style={{ color: 'var(--accent)', fontWeight: 500 }}>
               you@example.com
             </a>
           </p>
+          <Link href="/" style={{
+            fontSize: '0.8rem',
+            color: 'var(--muted)',
+            textDecoration: 'none',
+            fontWeight: 500,
+          }}>
+            ← Back to all posts
+          </Link>
         </div>
 
       </article>

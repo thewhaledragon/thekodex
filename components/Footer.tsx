@@ -3,16 +3,17 @@ export default function Footer() {
     <footer style={{
       borderTop: '1px solid var(--border)',
       textAlign: 'center',
-      padding: '2rem 1.5rem',
-      fontSize: '0.85rem',
+      padding: '2.2rem 1.5rem',
+      fontSize: '0.82rem',
       color: 'var(--muted)',
+      fontFamily: "'Lexend', sans-serif",
+      letterSpacing: '0.01em',
     }}>
-      {/* ✏️ Change "Your Name" and year */}
       <p>
         © {new Date().getFullYear()} TheWhaleDragonKodex ·{' '}
         <a
           href="https://github.com/thewhaledragon"
-          style={{ color: 'var(--accent)', textDecoration: 'none' }}
+          style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 500 }}
         >
           TheWhaleDragon
         </a>
