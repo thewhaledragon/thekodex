@@ -1,4 +1,4 @@
-# My Blog — Next.js + GitHub Pages
+# TheWhaleDragonKodex | AI x Music
 
 A clean, fast static blog built with Next.js 14.
 No CMS, no database — posts are plain Markdown files.
