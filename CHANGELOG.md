@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Added GitHub Pages `basePath` configuration in `next.config.js` to correctly resolve CSS, fonts, and link routes on production deployments.
 
 ### Changed
+- Refactored `app/about/page.tsx` with a stunning glassmorphism design, floating animations (`animate-fade-up`), and unified premium visual containers, fulfilling the request to make it beautiful while keeping the existing color palette.
 - Switched global font from Lora/Source Sans 3 to **Lexend** across all pages (`globals.css`, `Header`, `Footer`, all pages).
 - Complete visual redesign of **About page**: fixed oversized icons (inline 18px SVGs), added hero section with gradient accent bar, skill tag cloud, `JobCard`/`ProjectCard`/`ConfBadge` component layout, and timeline-style education section.
 - Redesigned **Home (blog listing) page**: gradient heading underline, uppercase tag pills, CSS-based hover on post links.
