@@ -1,51 +1,60 @@
+'use client'
 import Link from 'next/link'
 
 export default function Header() {
   return (
     <header style={{
       borderBottom: '1px solid var(--border)',
-      padding: '2.2rem 1.5rem 1.8rem',
-      textAlign: 'center',
+      padding: '1.6rem 2rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      backdropFilter: 'blur(4px)',
+      position: 'sticky',
+      top: 0,
+      zIndex: 50,
+      background: 'rgba(242,248,244,0.92)',
     }}>
-      {/* ✏️ Change "Your Name" and the tagline */}
       <Link href="/" style={{
-        fontFamily: "'Lora', serif",
-        fontSize: '2rem',
-        fontWeight: 600,
+        fontFamily: "'Lexend', sans-serif",
+        fontSize: '1.25rem',
+        fontWeight: 700,
         color: 'var(--accent)',
-        letterSpacing: '-0.5px',
+        letterSpacing: '-0.02em',
         textDecoration: 'none',
       }}>
         TheWhaleDragonKodex
       </Link>
 
-      <p style={{
-        marginTop: '0.4rem',
-        fontSize: '0.95rem',
-        color: 'var(--muted)',
-        fontStyle: 'italic',
-      }}>
-        Writing about AI x Music.
-      </p>
-
       <nav style={{
-        marginTop: '1.1rem',
         display: 'flex',
-        justifyContent: 'center',
-        gap: '1.6rem',
+        alignItems: 'center',
+        gap: '0.25rem',
       }}>
         {[
-          { label: 'Home',  href: '/'      },
+          { label: 'Home', href: '/' },
           { label: 'About', href: '/about' },
         ].map(({ label, href }) => (
           <Link key={href} href={href} style={{
             textDecoration: 'none',
             color: 'var(--muted)',
-            fontSize: '0.9rem',
-            fontWeight: 400,
-            letterSpacing: '0.04em',
+            fontSize: '0.82rem',
+            fontWeight: 500,
+            letterSpacing: '0.08em',
             textTransform: 'uppercase',
-          }}>
+            padding: '0.4rem 0.9rem',
+            borderRadius: '6px',
+            transition: 'background 0.18s, color 0.18s',
+          }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLElement).style.background = 'var(--surface)'
+                ; (e.currentTarget as HTMLElement).style.color = 'var(--accent)'
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLElement).style.background = 'transparent'
+                ; (e.currentTarget as HTMLElement).style.color = 'var(--muted)'
+            }}
+          >
             {label}
           </Link>
         ))}
