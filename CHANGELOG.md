@@ -8,6 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- Complete redesign of `app/about/page.tsx`: minimal, professional layout with a single vertical chronological timeline that merges Work Experience and Education. Removed all section icons; replaced with clean dot-and-line timeline connectors. Hero section retains gradient headline and key stats row. Selected Work now uses a compact 3-column card grid. Lexend font is enforced globally; existing color scheme (`--accent`, `--accent2`, `--muted`, `--border`, etc.) is used throughout with no new CSS variables.
+
 ### Fixed
 - Added GitHub Pages `basePath` configuration in `next.config.js` to correctly resolve CSS, fonts, and link routes on production deployments.
 
