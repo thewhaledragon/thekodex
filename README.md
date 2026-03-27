@@ -1,4 +1,4 @@
-# The Kodex | AI x Music
+# The Kodex | AI Blog
 
 A clean, fast static blog built with Next.js 14.
 No CMS, no database — posts are plain Markdown files.
