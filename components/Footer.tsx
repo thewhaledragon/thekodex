@@ -1,20 +1,13 @@
 export default function Footer() {
   return (
-    <footer style={{
-      borderTop: '1px solid var(--border)',
-      textAlign: 'center',
-      padding: '2.2rem 1.5rem',
-      fontSize: '0.82rem',
-      color: 'var(--muted)',
-      letterSpacing: '0.01em',
-    }}>
-      <p>
+    <footer className="site-footer">
+      <p className="site-footer__text">
         © {new Date().getFullYear()} The Kodex ·{' '}
         <a
-          href="https://github.com/thewhaledragon"
-          style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 500 }}
+          href="https://x.com/thewhaledragon"
+          className="site-footer__link"
         >
-          TheWhaleDragon
+          The Whale Dragon
         </a>
       </p>
     </footer>

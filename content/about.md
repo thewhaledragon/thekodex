@@ -1,4 +1,4 @@
-# About Me
+<!-- # About Me
 
 ## Summary
 
@@ -152,4 +152,4 @@ Interstellar Frontiers 2024 — Perth, Australia — March 13, 2024
 - Implemented PID-based thrust vector control.
 - Built a hardware prototype with Arduino Nano, MPU6050, and SG90 servo.
 - Conducted hold-down tests and data logging.
-- Published findings in IEEE INCOFT 2023.
+- Published findings in IEEE INCOFT 2023. -->

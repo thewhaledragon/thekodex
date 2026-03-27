@@ -7,6 +7,9 @@ const nextConfig = {
   assetPrefix: basePath,
   output: 'export',        // static HTML export for GitHub Pages
   trailingSlash: true,     // generates /blog/slug/index.html (needed for Pages)
+  turbopack: {
+    root: __dirname,
+  },
   images: {
     unoptimized: true,     // required for static export
   },

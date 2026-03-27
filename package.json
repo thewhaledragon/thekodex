@@ -10,11 +10,17 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
+    "katex": "^0.16.43",
     "next": "^16.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "rehype-katex": "^7.0.1",
+    "rehype-stringify": "^10.0.1",
     "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "remark-rehype": "^11.1.2",
+    "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
     "@types/node": "^20",
