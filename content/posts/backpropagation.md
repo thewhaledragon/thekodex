@@ -16,6 +16,8 @@ a = 10
 print(a)
 ```
 
+$$x = y + x$$
+
 ### References
 
 1. [https://cs231n.github.io/optimization-2/](https://cs231n.github.io/optimization-2/)

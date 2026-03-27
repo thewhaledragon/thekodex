@@ -191,12 +191,10 @@ export default function AboutPage() {
 
           <div className="text-[var(--muted)] leading-relaxed space-y-6 max-w-2xl">
             <p>
-              I am an AI/ML researcher driven by a background in astrophysics and electrical engineering.
-              My work focuses on bridging theoretical modeling with practical systems engineering to build
-              observable, intelligent tools.
+              I like learning about neural networks.
             </p>
 
-            <ul className="space-y-3 list-none p-0">
+            {/* <ul className="space-y-3 list-none p-0">
               <li className="flex gap-4 items-start">
                 <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-[var(--accent2)] flex-shrink-0" />
                 <span>
@@ -225,13 +223,13 @@ export default function AboutPage() {
                   focusing on the intersection of machine learning and physical simulations.
                 </span>
               </li>
-            </ul>
+            </ul> */}
           </div>
 
         </section>
 
         {/* ── Timeline ── */}
-        <section>
+        {/* <section>
 
           <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-[var(--muted)] mb-12">
             Professional & Academic Journey
@@ -247,7 +245,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-        </section>
+        </section> */}
 
       </main>
 
