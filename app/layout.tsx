@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     default: 'The Kodex',
     template: '%s · The Kodex',
   },
-  description: 'My Study Notes on AI.',
+  description: 'Notes on AI.',
 }
 
 export default function RootLayout({
