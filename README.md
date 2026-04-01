@@ -1,6 +1,27 @@
-# The Kodex | AI Blog
+# The Kodex | The Whale Dragon Blog
 
-The Kodex → [https://thewhaledragon.github.io/TheWhaleDragonKodex/](https://thewhaledragon.github.io/TheWhaleDragonKodex/)
+**The Kodex** → [LINK](https://thewhaledragon.github.io/thekodex/)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+---
+
+If you want to use this repo to create your own blog, follow the below instructions:
 
 A clean, fast static blog built with Next.js 14.
 No CMS, no database — posts are plain Markdown files.
