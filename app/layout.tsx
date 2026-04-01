@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-const basePath = process.env.NODE_ENV === 'production' ? '/TheWhaleDragonKodex' : ''
+const basePath = process.env.NODE_ENV === 'production' ? '/thekodex' : ''
 
 export const metadata: Metadata = {
   title: {
