@@ -4,7 +4,7 @@ date: "2026-04-07"
 tag: "THOUGHTS"
 excerpt: "In the last post, I talked about the importance of having a mission ..."
 subtitle: "Target Locked In"
-coverImage: "blog_asset/b2_map.png"
+coverImage: ""
 ---
 ## WHAT WENT WRONG?
 

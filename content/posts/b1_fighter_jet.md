@@ -4,7 +4,7 @@ date: "2026-04-07"
 tag: "THOUGHTS"
 excerpt: "Even a fighter pilot has thoughts about scrolling X.com ..."
 subtitle: "Create a mission. Then give it your utmost focus."
-coverImage: "blog_asset/b1_fighter_jet.png"
+coverImage: ""
 ---
 ## **MISSION IS THE FOCUS**
 
