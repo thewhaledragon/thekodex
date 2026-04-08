@@ -1,5 +1,19 @@
 # AI Change Log
 
+## [2026-04-08]
+
+### Added
+- None.
+
+### Modified
+- Updated the root `<html>` element in `app/layout.tsx` to include `data-scroll-behavior="smooth"` so Next.js recognizes intentional smooth scrolling during route transitions.
+
+### Fixed
+- Fixed the recurring Next.js dev warning about missing `data-scroll-behavior="smooth"` while `scroll-behavior: smooth` is enabled globally.
+
+### Notes
+- No CSS behavior change was needed because smooth scrolling was already configured in `app/globals.css`; this update makes that intent explicit to Next.js.
+
 ## [2026-03-27]
 
 ### Added
